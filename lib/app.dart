@@ -16,7 +16,7 @@ class ProfileApp extends ConsumerWidget {
       themeMode: ref.watch(appThemeModeProvider),
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeAnimationDuration: const Duration(milliseconds: 400),
+      themeAnimationDuration: const Duration(milliseconds: 300),
       themeAnimationCurve: Curves.easeOutSine,
       home: const SelectionArea(child: HomeScreen()),
     );
