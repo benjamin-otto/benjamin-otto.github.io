@@ -21,7 +21,7 @@ class BrandsSection extends StatefulWidget {
 
 class _BrandsSectionState extends State<BrandsSection>
     with AutomaticKeepAliveClientMixin {
-  final _scrollDuration = const Duration(seconds: 5);
+  final _scrollDuration = const Duration(seconds: 10);
   final _brandsTopController = ScrollController();
   final _brandsBottomController = ScrollController();
   final _scrollIncrement = 500;
