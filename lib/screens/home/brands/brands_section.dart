@@ -101,11 +101,11 @@ class _BrandsSectionState extends State<BrandsSection>
     bool reverse = false,
   }) {
     return MouseRegion(
-      onEnter: (_) => _cancelScrollAnimation(),
+      onEnter: (_) => _stopAutoScroll(),
       onExit: (_) => _startAutoScroll(),
       child: GestureDetector(
-        onTap: _cancelScrollAnimation,
-        onTapCancel: _startAutoScroll,
+        onLongPress: _stopAutoScroll,
+        onLongPressUp: _startAutoScroll,
         child: SizedBox(
           height: responsiveValue(
             context,
@@ -164,7 +164,7 @@ class _BrandsSectionState extends State<BrandsSection>
     }
   }
 
-  void _cancelScrollAnimation() {
+  void _stopAutoScroll() {
     _scrollTimer?.cancel();
     _brandsTopOffset = _brandsTopController.offset;
     _brandsBottomOffset = _brandsBottomController.offset;
@@ -200,8 +200,8 @@ class _Brand extends HookWidget {
 
     return GestureDetector(
       onTap: () => openUrl(url),
-      onTapDown: (_) => controller.forward(),
-      onTapCancel: controller.reverse,
+      onLongPress: controller.forward,
+      onLongPressUp: controller.reverse,
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         onEnter: (_) => controller.forward(),
