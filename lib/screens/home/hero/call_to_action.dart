@@ -15,7 +15,11 @@ class CallToAction extends StatelessWidget {
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: responsiveValue(
+        context,
+        mobile: CrossAxisAlignment.center,
+        desktop: CrossAxisAlignment.start,
+      ),
       mainAxisSize: MainAxisSize.min,
       children: [
         FittedBox(
@@ -32,14 +36,14 @@ class CallToAction extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: responsiveValue(context, mobile: 8, desktop: 2)),
+        const SizedBox(height: 8),
         FittedBox(
           child: Text(
             'I make Flutter apps.',
             style: textTheme.displayLarge?.copyWith(fontSize: 72),
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 8),
         const AccountsRow(),
       ],
     );
