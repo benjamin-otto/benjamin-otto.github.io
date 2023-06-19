@@ -31,12 +31,3 @@ double randomDoubleInRange({required double min, required double max}) {
 
 Future<void> openUrl(String url) async =>
     await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank');
-
-void openGitHub() => openUrl('https://github.com/benjamin-otto');
-
-void openLinkedIn() => openUrl('https://www.linkedin.com/in/ottobenjamin/');
-
-void emailSelf() => openUrl('mailto:benjaminotto@pm.me'
-    '?subject=Let\'s Talk!'
-    '&body=Hello Benjamin,\n\n'
-    'I\'m interested in working on a Flutter project together.');

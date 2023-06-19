@@ -22,6 +22,7 @@ abstract class Logos {
   static const riverpod = '$logos/riverpod.png';
   static const flutterHooks = '$logos/flutter_hooks.png';
   static const bloc = '$logos/bloc.png';
+  static const leetcode = '$logos/leetcode.png';
   static const pubDev = '$logos/pub_dev.png';
   static const googlePlay = '$logos/google_play.png';
 }

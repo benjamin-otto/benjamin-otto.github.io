@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../utils/helpers.dart';
+import '../../../widgets/accounts_row.dart';
 
 class CallToAction extends StatelessWidget {
   const CallToAction({super.key});
@@ -40,27 +40,8 @@ class CallToAction extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        _buttonRow(colorScheme),
+        const AccountsRow(),
       ],
     );
   }
-
-  Widget _buttonRow(ColorScheme colorScheme) => const FittedBox(
-        child: Row(
-          children: [
-            IconButton(
-              icon: FaIcon(FontAwesomeIcons.github),
-              onPressed: openGitHub,
-            ),
-            IconButton(
-              icon: FaIcon(FontAwesomeIcons.linkedin),
-              onPressed: openLinkedIn,
-            ),
-            IconButton(
-              icon: FaIcon(FontAwesomeIcons.envelope),
-              onPressed: emailSelf,
-            ),
-          ],
-        ),
-      );
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../utils/helpers.dart';
+import 'accounts_row.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -14,23 +13,7 @@ class Footer extends StatelessWidget {
       child: const Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              IconButton(
-                icon: Icon(FontAwesomeIcons.github),
-                onPressed: openGitHub,
-              ),
-              IconButton(
-                icon: Icon(FontAwesomeIcons.linkedin),
-                onPressed: openLinkedIn,
-              ),
-              IconButton(
-                icon: FaIcon(FontAwesomeIcons.envelope),
-                onPressed: emailSelf,
-              ),
-            ],
-          ),
+          AccountsRow(),
           SizedBox(height: 16),
           Text(
             '© Benjamin Otto 2023 | All rights reserved.',
