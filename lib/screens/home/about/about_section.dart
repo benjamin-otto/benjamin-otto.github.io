@@ -128,6 +128,7 @@ class _AttributeChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Chip(
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       elevation: 16,
       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
       shape: const LinearBorder(),
