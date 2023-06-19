@@ -155,8 +155,8 @@ class _ContactSectionState extends State<ContactSection> {
                         responsiveValue(
                           context,
                           mobile: const EdgeInsets.symmetric(
-                            horizontal: 24,
-                            vertical: 20,
+                            horizontal: 20,
+                            vertical: 16,
                           ),
                           desktop: const EdgeInsets.symmetric(
                             horizontal: 32,
