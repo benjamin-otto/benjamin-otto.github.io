@@ -104,8 +104,8 @@ class _BrandsSectionState extends State<BrandsSection>
       onEnter: (_) => _stopAutoScroll(),
       onExit: (_) => _startAutoScroll(),
       child: GestureDetector(
-        onLongPress: _stopAutoScroll,
-        onLongPressUp: _startAutoScroll,
+        onTapDown: (_) => _stopAutoScroll(),
+        onTapUp: (_) => _startAutoScroll(),
         child: SizedBox(
           height: responsiveValue(
             context,
@@ -200,8 +200,8 @@ class _Brand extends HookWidget {
 
     return GestureDetector(
       onTap: () => openUrl(url),
-      onLongPress: controller.forward,
-      onLongPressUp: controller.reverse,
+      onTapDown: (_) => controller.forward(),
+      onTapUp: (_) => controller.reverse(),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         onEnter: (_) => controller.forward(),
