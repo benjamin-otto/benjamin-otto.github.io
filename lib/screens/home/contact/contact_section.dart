@@ -156,10 +156,10 @@ class _ContactSectionState extends State<ContactSection> {
                           context,
                           mobile: const EdgeInsets.symmetric(
                             horizontal: 24,
-                            vertical: 24,
+                            vertical: 20,
                           ),
                           desktop: const EdgeInsets.symmetric(
-                            horizontal: 24,
+                            horizontal: 32,
                             vertical: 24,
                           ),
                         ),
