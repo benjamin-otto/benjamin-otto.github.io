@@ -21,7 +21,7 @@ class BrandsSection extends StatefulWidget {
 
 class _BrandsSectionState extends State<BrandsSection>
     with AutomaticKeepAliveClientMixin {
-  final _scrollDuration = const Duration(seconds: 10);
+  final _scrollDuration = const Duration(seconds: 15);
   final _brandsTopController = ScrollController();
   final _brandsBottomController = ScrollController();
   final _scrollIncrement = 500;
@@ -103,22 +103,18 @@ class _BrandsSectionState extends State<BrandsSection>
     return MouseRegion(
       onEnter: (_) => _stopAutoScroll(),
       onExit: (_) => _startAutoScroll(),
-      child: GestureDetector(
-        onTapDown: (_) => _stopAutoScroll(),
-        onTapUp: (_) => _startAutoScroll(),
-        child: SizedBox(
-          height: responsiveValue(
-            context,
-            mobile: 64,
-            desktop: 100,
-          ),
-          child: ListView.builder(
-            controller: controller,
-            reverse: reverse,
-            scrollDirection: Axis.horizontal,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (_, i) => items[i % items.length],
-          ),
+      child: SizedBox(
+        height: responsiveValue(
+          context,
+          mobile: 64,
+          desktop: 100,
+        ),
+        child: ListView.builder(
+          controller: controller,
+          reverse: reverse,
+          scrollDirection: Axis.horizontal,
+          physics: const NeverScrollableScrollPhysics(),
+          itemBuilder: (_, i) => items[i % items.length],
         ),
       ),
     );
@@ -191,8 +187,9 @@ class _Brand extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller =
-        useAnimationController(duration: const Duration(milliseconds: 300));
+    final controller = useAnimationController(
+      duration: const Duration(milliseconds: 300),
+    );
     final colorAnimation = ColorTween(
       begin: NeonColors.quaternary,
       end: Colors.transparent,
@@ -200,8 +197,6 @@ class _Brand extends HookWidget {
 
     return GestureDetector(
       onTap: () => openUrl(url),
-      onTapDown: (_) => controller.forward(),
-      onTapUp: (_) => controller.reverse(),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         onEnter: (_) => controller.forward(),
