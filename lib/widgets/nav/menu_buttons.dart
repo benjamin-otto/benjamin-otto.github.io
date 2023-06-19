@@ -18,12 +18,14 @@ class MenuButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return TextButton(
-      onPressed: () =>
-          ref.read(sectionScrollProvider.notifier).scrollToSection(section),
-      child: Text(
-        text,
-        style: Theme.of(context).textTheme.bodyMedium,
+    return SelectionContainer.disabled(
+      child: TextButton(
+        onPressed: () =>
+            ref.read(sectionScrollProvider.notifier).scrollToSection(section),
+        child: Text(
+          text,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
       ),
     );
   }
@@ -36,16 +38,18 @@ class HomeButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final ThemeData(:colorScheme) = Theme.of(context);
 
-    return TextButton(
-      onPressed: () => ref
-          .read(sectionScrollProvider.notifier)
-          .scrollToSection(Section.hero),
-      child: GradientText(
-        text: 'Benjamin',
-        colors: [colorScheme.primary, colorScheme.secondary],
-        style: GoogleFonts.dancingScript(
-          fontSize: 32,
-          fontWeight: FontWeight.w900,
+    return SelectionContainer.disabled(
+      child: TextButton(
+        onPressed: () => ref
+            .read(sectionScrollProvider.notifier)
+            .scrollToSection(Section.hero),
+        child: GradientText(
+          text: 'Benjamin',
+          colors: [colorScheme.primary, colorScheme.secondary],
+          style: GoogleFonts.dancingScript(
+            fontSize: 32,
+            fontWeight: FontWeight.w900,
+          ),
         ),
       ),
     );
