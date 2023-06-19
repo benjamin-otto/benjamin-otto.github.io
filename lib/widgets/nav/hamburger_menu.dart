@@ -25,24 +25,43 @@ class HamburgerButton extends HookConsumerWidget {
           ? const Offset(0, 0)
           : const Offset(0, -1),
       duration: duration,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: IconButton(
-          onPressed: ref
-              .read(navVisibilityProvider.notifier)
-              .toggleHamburgerMenuVisible,
-          style: IconButton.styleFrom(
-            backgroundColor: colorScheme.background,
-            foregroundColor: colorScheme.primary,
-          ),
-          icon: AnimatedIcon(
-            icon: AnimatedIcons.close_menu,
-            progress: Tween(begin: 1.0, end: 0.0).animate(
-              CurvedAnimation(
-                parent: controller,
-                curve: Curves.fastOutSlowIn,
+      child: PhysicalModel(
+        color: Colors.transparent,
+        elevation: 12,
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            color: colorScheme.background,
+            border: Border(
+              bottom: BorderSide(
+                color: colorScheme.primary.withOpacity(0.5),
+                width: 1,
               ),
             ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const HomeButton(),
+              IconButton(
+                onPressed: ref
+                    .read(navVisibilityProvider.notifier)
+                    .toggleHamburgerMenuVisible,
+                style: IconButton.styleFrom(
+                  backgroundColor: colorScheme.background,
+                  foregroundColor: colorScheme.primary,
+                ),
+                icon: AnimatedIcon(
+                  icon: AnimatedIcons.close_menu,
+                  progress: Tween(begin: 1.0, end: 0.0).animate(
+                    CurvedAnimation(
+                      parent: controller,
+                      curve: Curves.fastOutSlowIn,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -56,7 +75,7 @@ class HamburgerMenu extends ConsumerWidget {
   final duration = const Duration(milliseconds: 300);
 
   List<Widget> get _items => const [
-        HomeButton(),
+        // HomeButton(),
         MenuButton(text: 'About', section: Section.about),
         MenuButton(text: 'Projects', section: Section.projects),
         MenuButton(text: 'Brands', section: Section.brands),
