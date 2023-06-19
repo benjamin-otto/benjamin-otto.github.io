@@ -29,7 +29,7 @@ class HamburgerButton extends HookConsumerWidget {
         color: Colors.transparent,
         elevation: 12,
         child: Container(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: colorScheme.background,
             border: Border(

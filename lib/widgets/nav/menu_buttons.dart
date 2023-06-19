@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../providers/section_scroll/section_scroll.dart';
 import '../../providers/section_scroll/section_scroll_state.dart';
+import '../../utils/helpers.dart';
 import '../gradient_text.dart';
 
 class MenuButton extends ConsumerWidget {
@@ -47,7 +48,7 @@ class HomeButton extends ConsumerWidget {
           text: 'Benjamin',
           colors: [colorScheme.primary, colorScheme.secondary],
           style: GoogleFonts.dancingScript(
-            fontSize: 32,
+            fontSize: responsiveValue(context, mobile: 20, desktop: 32),
             fontWeight: FontWeight.w900,
           ),
         ),
