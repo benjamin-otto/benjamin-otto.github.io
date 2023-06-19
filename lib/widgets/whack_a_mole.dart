@@ -141,9 +141,8 @@ class _WhackAMoleState extends State<WhackAMole>
         max: dimension * 0.75,
       );
 
-  // TODO: Change min/max after demo
   Duration get _randomDuration {
-    int seconds = randomIntInRange(min: 20, max: 30);
+    int seconds = randomIntInRange(min: 45, max: 90);
     return Duration(seconds: seconds);
   }
 
