@@ -56,7 +56,13 @@ class _BrandsSectionState extends State<BrandsSection>
       onNotification: (_) => true,
       child: TranslucentBackground(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 64),
+          padding: EdgeInsets.symmetric(
+            vertical: responsiveValue(
+              context,
+              mobile: 48,
+              desktop: 64,
+            ),
+          ),
           child: Column(
             children: [
               _autoScrollingListView(
@@ -114,7 +120,9 @@ class _BrandsSectionState extends State<BrandsSection>
           reverse: reverse,
           scrollDirection: Axis.horizontal,
           physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (_, i) => items[i % items.length],
+          itemBuilder: (_, i) {
+            return items[i % items.length];
+          },
         ),
       ),
     );
@@ -196,6 +204,7 @@ class _Brand extends HookWidget {
     ).animate(controller);
 
     return GestureDetector(
+      behavior: HitTestBehavior.translucent,
       onTap: () => openUrl(url),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
