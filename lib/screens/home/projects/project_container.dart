@@ -91,7 +91,7 @@ class ProjectContainer extends HookWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: AspectRatio(
           aspectRatio: 1024 / 500,
-          child: Image.asset(imagePath),
+          child: Image.asset(imagePath, fit: BoxFit.contain),
         ),
       );
 
