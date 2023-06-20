@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:profile_site/utils/helpers.dart';
 
 import 'providers/app_theme_mode/app_theme_mode.dart';
 import 'screens/home/home.dart';
@@ -16,7 +17,13 @@ class ProfileApp extends ConsumerWidget {
       themeMode: ref.watch(appThemeModeProvider),
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeAnimationDuration: const Duration(milliseconds: 200),
+      themeAnimationDuration: Duration(
+        milliseconds: responsiveValue(
+          context,
+          mobile: 100,
+          desktop: 500,
+        ),
+      ),
       home: const SelectionArea(child: HomeScreen()),
     );
   }
