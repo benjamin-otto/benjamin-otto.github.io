@@ -31,10 +31,13 @@ class AccountsRow extends StatelessWidget {
         ),
         IconButton(
           icon: const FaIcon(FontAwesomeIcons.envelope),
-          onPressed: () => openUrl('mailto:benjaminotto@pm.me'
-              '?subject=Let\'s Talk!'
-              '&body=Hello Benjamin,\n\n'
-              'I\'m interested in working on a Flutter project together.'),
+          onPressed: () => openUrl(
+            'mailto:benjaminotto@pm.me'
+            '?subject=Let\'s Talk!'
+            '&body=Hello Benjamin,\n\n'
+            'I\'m interested in working on a Flutter project together.',
+            false,
+          ),
         ),
       ],
     );

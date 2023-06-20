@@ -29,5 +29,5 @@ double randomDoubleInRange({required double min, required double max}) {
   return min + math.Random().nextDouble() * (max - min);
 }
 
-Future<void> openUrl(String url) async =>
+Future<void> openUrl(String url, [newTab = true]) async =>
     await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank');
