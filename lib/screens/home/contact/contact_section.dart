@@ -87,6 +87,7 @@ class _ContactSectionState extends State<ContactSection> {
   Widget get _description => SectionDescription(
         text: 'Looking for a Flutter developer? Shoot me a message!',
         color: Theme.of(context).colorScheme.onSurface,
+        textAlign: TextAlign.center,
       );
 
   Widget get _contactForm {
