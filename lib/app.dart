@@ -20,7 +20,7 @@ class ProfileApp extends ConsumerWidget {
       themeAnimationDuration: Duration(
         milliseconds: responsiveValue(
           context,
-          mobile: 100,
+          mobile: 50, // animation janky on mobile, so do it quickly
           desktop: 500,
         ),
       ),
