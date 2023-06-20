@@ -94,7 +94,7 @@ class _ProjectsSectionState extends ConsumerState<ProjectsSection> {
   void _updateTheme(BuildContext context, double percentVisible) {
     final modeProvider = ref.read(appThemeModeProvider.notifier);
     final mode = ref.read(appThemeModeProvider);
-    const threshold = 20;
+    const threshold = 10;
 
     if (mode.isDark && percentVisible > threshold) {
       modeProvider.setThemeMode(ThemeMode.light);
