@@ -20,8 +20,10 @@ class SectionScroll extends _$SectionScroll {
   }
 
   Future<void> scrollToSection(Section section) async {
-    ref.read(navVisibilityProvider.notifier).setHamburgerMenuVisible(false);
     setScrollingToSection(true);
+    ref.read(navVisibilityProvider.notifier)
+      ..setHamburgerMenuVisible(false)
+      ..setHamburgerButtonVisible(false);
     await state.itemScrollController.scrollTo(
       index: section.index,
       duration: const Duration(milliseconds: 500),
