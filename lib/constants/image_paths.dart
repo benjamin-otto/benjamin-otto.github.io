@@ -22,6 +22,7 @@ abstract class Logos {
   static const riverpod = '$logos/riverpod.png';
   static const flutterHooks = '$logos/flutter_hooks.png';
   static const bloc = '$logos/bloc.png';
+  static const getX = '$logos/get_x.png';
   static const leetcode = '$logos/leetcode.png';
   static const pubDev = '$logos/pub_dev.png';
   static const googlePlay = '$logos/google_play.png';
@@ -48,8 +49,9 @@ abstract class Projects {
   static const thaiWordOfTheDay = '$projects/thai_word_of_the_day.png';
   static const manaoMeals = '$projects/manao_meals.png';
   static const lotusMerchant = '$projects/lotus_merchant.png';
+  static const eggPOS = '$projects/egg_pos.png';
   static const portfolioSite = '$projects/portfolio_site.png';
-  static const comingSoon = '$projects/coming_soon.png';
+  static const languageTuner = '$projects/language_tuner.png';
 }
 
 abstract class Lotties {
