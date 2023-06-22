@@ -14,16 +14,16 @@ class ProfileApp extends ConsumerWidget {
     return MaterialApp(
       title: 'Benjamin Otto',
       debugShowCheckedModeBanner: false,
-      themeMode: ref.watch(appThemeModeProvider),
+      // Animated theme switching is janky on mobile browsers, so
+      // I've disabled it for mobile :(
+      themeMode: responsiveValue(
+        context,
+        mobile: ThemeMode.dark,
+        desktop: ref.watch(appThemeModeProvider),
+      ),
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeAnimationDuration: Duration(
-        milliseconds: responsiveValue(
-          context,
-          mobile: 50, // animation janky on mobile, so do it quickly
-          desktop: 500,
-        ),
-      ),
+      themeAnimationDuration: const Duration(milliseconds: 500),
       home: const SelectionArea(child: HomeScreen()),
     );
   }
