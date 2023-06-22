@@ -82,16 +82,15 @@ class _WhackAMoleState extends State<WhackAMole>
     _timer = Timer(_randomDuration, _showMe);
   }
 
-  void _showMe() {
-    _controller
-        .forward()
-        .whenComplete(() => _hideMe(_controller.duration!.inMilliseconds));
+  Future<void> _showMe() async {
+    await _controller.forward();
+    _hideMe(_controller.duration!.inMilliseconds);
   }
 
-  void _hideMe(int milliseconds) {
-    _controller
-      ..reverseDuration = Duration(milliseconds: milliseconds)
-      ..reverse().whenComplete(_scheduleTimer);
+  Future<void> _hideMe(int milliseconds) async {
+    _controller.reverseDuration = Duration(milliseconds: milliseconds);
+    await _controller.reverse();
+    _scheduleTimer();
   }
 
   void _randomizeAnimationValues() {
