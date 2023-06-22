@@ -63,19 +63,23 @@ class _ProjectsSectionState extends ConsumerState<ProjectsSection> {
 
   Widget get _mobile => Column(
         children: [
+          lotusMerchantApp,
+          eggPOSApp,
+          manaoMealsApp,
           thaiWordOfTheDayApp,
           animatedFlightPathsPackage,
           multiBorderPackage,
           portfolioSite,
-          comingSoon,
+          languageTuner,
         ].withSpaceBetween(height: 40),
       );
 
   Widget get _desktop => Column(
         children: [
-          _projectRow(thaiWordOfTheDayApp, animatedFlightPathsPackage),
-          _projectRow(multiBorderPackage, portfolioSite),
-          _projectRow(comingSoon, const SizedBox()),
+          _projectRow(lotusMerchantApp, eggPOSApp),
+          _projectRow(manaoMealsApp, thaiWordOfTheDayApp),
+          _projectRow(animatedFlightPathsPackage, multiBorderPackage),
+          _projectRow(portfolioSite, languageTuner),
         ].withSpaceBetween(height: 64),
       );
 

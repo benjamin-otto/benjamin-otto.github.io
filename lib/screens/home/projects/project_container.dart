@@ -84,7 +84,7 @@ class ProjectContainer extends HookWidget {
   }
 
   Widget get _projectImage => Card(
-        elevation: 12,
+        elevation: 16,
         color: Colors.transparent,
         margin: EdgeInsets.zero,
         clipBehavior: Clip.antiAlias,
@@ -99,7 +99,9 @@ class ProjectContainer extends HookWidget {
       TranslucentBackground(
         color: projectColor,
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(
+            responsiveValue(context, mobile: 20, desktop: 24),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
