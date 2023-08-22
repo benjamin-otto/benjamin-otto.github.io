@@ -18,7 +18,7 @@ ProjectContainer get lotusMerchantApp => ProjectContainer(
       imagePath: Projects.lotusMerchant,
       direction: SlideDirection.leftToRight,
       projectColor: const Color(0xFF00BCB5),
-      techButtons: [_dart, _flutter, _bloc],
+      techButtons: [_dart, _flutter, _firebase, _bloc],
     );
 
 ProjectContainer get eggPOSApp => ProjectContainer(
@@ -32,7 +32,7 @@ ProjectContainer get eggPOSApp => ProjectContainer(
       imagePath: Projects.eggPOS,
       direction: SlideDirection.rightToLeft,
       projectColor: const Color(0xFFFBD606),
-      techButtons: [_dart, _flutter, _bloc],
+      techButtons: [_dart, _flutter, _firebase, _bloc],
       downloadButton: const DownloadButton(
         imagePath: Logos.googlePlay,
         url:
