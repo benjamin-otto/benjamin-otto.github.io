@@ -1,11 +1,11 @@
 {
-    "name": "profile_site",
-    "short_name": "profile_site",
+    "name": "Benjamin Otto",
+    "short_name": "Benjamin Otto",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "My Flutter portfolio.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
