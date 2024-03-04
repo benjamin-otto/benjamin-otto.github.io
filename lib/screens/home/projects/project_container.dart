@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -31,35 +32,48 @@ class ProjectContainer extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller =
-        useAnimationController(duration: const Duration(seconds: 1));
-    final position = Tween<Offset>(
-      begin: switch (direction) {
-        SlideDirection.leftToRight => const Offset(-2, 0),
-        SlideDirection.rightToLeft => const Offset(2, 0),
-      },
-      end: Offset.zero,
-    )
-        .chain(CurveTween(curve: Curves.fastEaseInToSlowEaseOut))
-        .animate(controller);
+    // Removed animation because it was slow and janky
 
-    return VisibilityDetector(
-      key: UniqueKey(),
-      onVisibilityChanged: (info) {
-        if (controller.status == AnimationStatus.completed) return;
-        if (info.percentVisible > 10) controller.forward();
-      },
-      child: FadeTransition(
-        opacity: controller,
-        child: SlideTransition(
-          position: position,
-          child: responsiveValue(
-            context,
-            mobile: _mobile(context),
-            desktop: _desktop(context),
-          ),
-        ),
-      ),
+    // final controller =
+    //     useAnimationController(duration: const Duration(seconds: 1));
+    // // final position = Tween<Offset>(
+    // //   begin: switch (direction) {
+    // //     SlideDirection.leftToRight => const Offset(-2, 0),
+    // //     SlideDirection.rightToLeft => const Offset(2, 0),
+    // //   },
+    // //   end: Offset.zero,
+    // // )
+    // //     .chain(CurveTween(curve: Curves.fastEaseInToSlowEaseOut))
+    // //     .animate(controller);
+
+    // return VisibilityDetector(
+    //   key: UniqueKey(),
+    //   onVisibilityChanged: (info) {
+    //     if (controller.status == AnimationStatus.completed) return;
+    //     if (info.percentVisible > 10) controller.forward();
+    //   },
+    // child: FadeTransition(
+    //   opacity: controller,
+    //   child: SlideTransition(
+    //     position: position,
+    //     child: responsiveValue(
+    //       context,
+    //       mobile: _mobile(context),
+    //       desktop: _desktop(context),
+    //     ),
+    //   ),
+    // ),
+    //   child: responsiveValue(
+    //     context,
+    //     mobile: _mobile(context),
+    //     desktop: _desktop(context),
+    //   ),
+    // );
+
+    return responsiveValue(
+      context,
+      mobile: _mobile(context),
+      desktop: _desktop(context),
     );
   }
 

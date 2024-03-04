@@ -87,7 +87,7 @@ class AboutSection extends StatelessWidget {
           'My second home is Chiang Mai, Thailand where I\'ve previously lived '
           'for more than a decade. While there I worked for two of the '
           'largest software companies in town, Manao Software and Aware Co. Ltd. '
-          'Working with them I grew into a better developer.',
+          'Over the years with them I grew into a better developer.',
           style: style,
           textAlign: TextAlign.justify,
         ),
@@ -95,7 +95,7 @@ class AboutSection extends StatelessWidget {
         Text(
           'I\'ve also been fortunate to have lived in both Denmark and Italy. '
           'Living abroad has taught me to be a more open-minded and accepting person. '
-          'The world is your oyster.',
+          'Let\'s go somewhere together!',
           style: style,
           textAlign: TextAlign.justify,
         ),

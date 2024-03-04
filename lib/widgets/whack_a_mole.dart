@@ -141,7 +141,7 @@ class _WhackAMoleState extends State<WhackAMole>
       );
 
   Duration get _randomDuration {
-    int seconds = randomIntInRange(min: 45, max: 90);
+    int seconds = randomIntInRange(min: 30, max: 60);
     return Duration(seconds: seconds);
   }
 
